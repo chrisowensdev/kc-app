@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavBarList = styled.ul`
@@ -12,22 +13,40 @@ const NavBarList = styled.ul`
     padding: 0;
     margin: 10px auto;
 
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: grey;
+    }
+
     li {
-        padding: 20px;
+        margin: 20px;
     }
 `;
 
 const NavBar = () => {
+    const [categories, setCategories] = useState([
+        'candles',
+        'wax melts',
+        'seasonal',
+        'special occasion',
+        'other',
+        'sale',
+        'contact',
+    ]);
     return (
         <div>
             <NavBarList>
-                <li>Candles</li>
-                <li>Wax Melts</li>
-                <li>Seasonal</li>
-                <li>Special Occasion</li>
-                <li>Other</li>
-                <li>Sale</li>
-                <li>Contact</li>
+                {categories.map((cat) => {
+                    return (
+                        <li key={cat}>
+                            <Link to='/listings'>{cat}</Link>
+                        </li>
+                    );
+                })}
             </NavBarList>
         </div>
     );

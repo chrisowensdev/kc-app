@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../Logo';
 import NavBar from '../NavBar';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -14,7 +15,9 @@ const HeaderContainer = styled.div`
 const Header = () => {
     return (
         <HeaderContainer>
-            <Logo />
+            <Link to='/'>
+                <Logo />
+            </Link>
             <NavBar />
         </HeaderContainer>
     );
