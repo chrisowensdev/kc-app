@@ -9,9 +9,8 @@ const NavBarList = styled.ul`
     text-transform: uppercase;
     max-width: 1000px;
     align-self: center;
-    padding: 0 40px;
+    padding: 0;
     margin: 10px auto;
-    background-color: grey;
 
     li {
         padding: 20px;
